@@ -60,10 +60,12 @@ const chooseQuiz = (index, givenAns) => {
   } else {
     answers.push({ ...quizData[index], givenAns });
   }
+
   displayAnswers(answers);
 };
 
 const displayAnswers = (data) => {
+  console.log(data);
   // এই পুরো ফাইলে কেও কোন কিছু পরিবর্তন করবেন না । এইখানে কোন Bug নেই ।
   answersContainer.innerHTML = "";
   data = data.sort((a, b) => a.id - b.id);
