@@ -1,3 +1,7 @@
+// add blog-page
+document.getElementById("blog-btn").addEventListener("click", function () {
+  window.location.href = "index2.html";
+});
 // global variable declaration
 let count = 0;
 let timer;
@@ -112,7 +116,7 @@ document.querySelector("#submit").addEventListener("click", () => {
   let storage = JSON.parse(localStorage.getItem("result"));
   if (storage) {
     localStorage.setItem(
-      "results",
+      "result",
       JSON.stringify([
         ...storage,
         {
@@ -124,7 +128,7 @@ document.querySelector("#submit").addEventListener("click", () => {
     );
   } else {
     localStorage.setItem(
-      "results",
+      "result",
       JSON.stringify([
         {
           marks: totalMark,
@@ -157,7 +161,9 @@ document.querySelector("#submit").addEventListener("click", () => {
   ${
     storage
       ? `<div class="mt-5">
-      <h1 class="text-center">Previous Submissions <button class="text-blue-800 text-xs" onclick={localStorage.clear();location.reload()}>Clear History</button></h1>
+      <h1 class="text-center">Previous Submissions <button class="text-blue-800 text-xs" onclick="{
+        (localStorage.clear(), location.reload())
+      }">Clear History</button></h1>
     <div
     class="flex justify-between items-center border rounded p-2 my-2 shadow-sm font-medium">
     <div>Marks</div>
